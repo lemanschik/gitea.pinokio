@@ -1,0 +1,5 @@
+# Exclude Gitea downloaded binaries and active server directories
+app/
+custom/
+data/
+log/

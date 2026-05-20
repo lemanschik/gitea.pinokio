@@ -1,3 +1,6 @@
+const platform = process.platform
+const binaryPath = platform === 'win32' ? 'app\\gitea.exe' : 'app/gitea'
+
 module.exports = {
   daemon: true,
   run: [
@@ -5,10 +8,10 @@ module.exports = {
       method: "shell.run",
       params: {
         message: [
-          "{{platform === 'win32' ? 'app/gitea.exe' : 'app/gitea'}} web --port {{port}}"
+          `${binaryPath} web --port {{port}}`
         ],
         on: [{
-          event: "/(http:\\/\\/[0-9.:]+)/",
+          event: "/AppURL\\(ROOT_URL\\):\\s*(http:\\/\\/[a-zA-Z0-9.:]+)/",
           done: true
         }]
       }
