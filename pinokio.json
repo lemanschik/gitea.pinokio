@@ -1,0 +1,5 @@
+{
+  "title": "Gitea",
+  "description": "A lightweight, painless, self-hosted Git service written in Go. Installs and launches in seconds, completely offline and locally.",
+  "icon": "icon.png"
+}
